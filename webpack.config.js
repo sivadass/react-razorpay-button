@@ -1,46 +1,45 @@
-const path = require('path');
-const webpack = require('webpack');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+
 module.exports = {
+  mode: "development",
   watch: true,
-  context: path.resolve(__dirname, './src'),
-  entry: {
-    app: './index.js',
-  },
+  entry: "./src/index.js",
   output: {
-    path: path.resolve(__dirname, './dist'),
-    filename: '[name].bundle.js',
+    path: __dirname + "/dist",
+    filename: "bundle.js"
   },
-  devtool: 'source-map',
-  resolve: {
-    alias: {
-      moment: 'moment/src/moment'
-    },
-  },
+
   module: {
     rules: [
       {
-        test: /.jsx?$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/,
-        query: {
-          presets: ['env','react','stage-2']
+        test: /\.jsx?$/,
+        loader: "babel-loader",
+        options: {
+          presets: ["react"]
         }
       },
       {
-        test: /\.scss?$/,
+        test: /\.css$/,
         loader: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          loader: 'css-loader!sass-loader'
+          loader: "css-loader",
+          options: {
+            modules: true
+          }
         })
       },
       {
-        test: /\.(woff|woff2|eot|ttf|otf|svg|png|jpg)$/,
-        loader: "file-loader"
+        test: /\.(png|jpg|gif|svg)$/,
+        loader: "file-loader",
+        query: {
+          name: "[name].[ext]?[hash]"
+        }
       }
     ]
   },
-  plugins: [
-    new ExtractTextPlugin('style.css'),
-  ]
+
+  plugins: [new ExtractTextPlugin("style.css")],
+
+  resolve: {
+    extensions: [".js", ".json", ".jsx"]
+  }
 };

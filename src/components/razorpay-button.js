@@ -4,7 +4,7 @@ class RazorpayButton extends React.Component {
   render() {
     return (
       <div className="razorpay-button-wrapper">
-        <button className="razorpay-button">Checkout</button>
+        <button>Checkout</button>
       </div>
     );
   }

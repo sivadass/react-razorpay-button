@@ -2,12 +2,12 @@ import React from "react";
 import { render } from "react-dom";
 
 // Styles
-import "./stylesheets/style.scss";
+import "./stylesheets/style.css";
 import RazorpayButton from "./components/razorpay-button";
 
 // Component
 const App = props => {
-  <RazorpayButton />;
+  return <RazorpayButton />;
 };
 
 // Render
