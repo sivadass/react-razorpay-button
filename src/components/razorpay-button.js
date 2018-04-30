@@ -10,7 +10,7 @@ class RazorpayButton extends React.Component {
   render() {
     return (
       <div className="razorpay-button-wrapper">
-        <button onClick={this.handleClick}>Checkout with Razorpay</button>
+        <button style={{width: "100%", background: "#f5f5f5", borderRadius: "4px"}} onClick={this.handleClick}>Checkout with Razorpay</button>
       </div>
     );
   }
