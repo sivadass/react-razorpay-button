@@ -5,32 +5,38 @@ class RazorpayButton extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isActive: false,
-      options: {
-        key: "YOUR_KEY_ID",
-        amount: "2000", // 2000 paise = INR 20
-        name: "Merchant Name",
-        description: "Purchase Description",
-        image: "/your_logo.png",
-        handler: function(response) {
-          alert(response.razorpay_payment_id);
-        },
-        prefill: {
-          name: "Harshil Mathur",
-          email: "harshil@razorpay.com"
-        },
-        notes: {
-          address: "Hello World"
-        },
-        theme: {
-          color: "#F37254"
-        }
-      }
+      isActive: false
     };
   }
 
+  componentDidMount() {
+    this.startRazorPay();
+  }
+
+  startRazorPay() {
+    let options = {
+      key: "YOUR_KEY_ID",
+      amount: "2000", // 2000 paise = INR 20
+      name: "Merchant Name",
+      description: "Purchase Description",
+      image: "/your_logo.png",
+      handler: function(response) {
+        alert(response.razorpay_payment_id);
+      },
+      prefill: {
+        name: "Harshil Mathur",
+        email: "harshil@razorpay.com"
+      },
+      notes: {
+        address: "Hello World"
+      },
+      theme: {
+        color: "#F37254"
+      }
+    };
+    var razorPay = new Razorpay(options);
+  }
   handleClick(e) {
-    let razorPay = new Razorpay(this.state.options);
     razorPay.open();
     e.preventDefault();
   }
