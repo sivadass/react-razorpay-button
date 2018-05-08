@@ -34,7 +34,8 @@ class RazorpayButton extends React.Component {
         color: "#F37254"
       }
     };
-    var razorPay = new Razorpay(options);
+    let razorPay = new Razorpay(options);
+    return razorPay;
   }
   handleClick(e) {
     razorPay.open();
