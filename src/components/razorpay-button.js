@@ -16,9 +16,9 @@ class RazorpayButton extends React.Component {
   startRazorPay() {
     let options = {
       key: "YOUR_KEY_ID",
-      amount: "2000", // 2000 paise = INR 20
-      name: "Merchant Name",
-      description: "Purchase Description",
+      amount: this.props.amunt, // 2000 paise = INR 20
+      name: this.props.merchantName,
+      description: this.props.description,
       image: "/your_logo.png",
       handler: function(response) {
         alert(response.razorpay_payment_id);
