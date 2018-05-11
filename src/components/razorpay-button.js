@@ -19,7 +19,8 @@ class RazorpayButton extends React.Component {
       amount: "2000", // 2000 paise = INR 20
       name: "Merchant Name",
       description: "Purchase Description",
-      image: "/your_logo.png",
+      image:
+        "https://res.cloudinary.com/sivadass/image/upload/v1493547373/dummy-logo/Veggy.png",
       handler: function(response) {
         alert(response.razorpay_payment_id);
       },
