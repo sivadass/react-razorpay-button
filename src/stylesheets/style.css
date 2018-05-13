@@ -9,7 +9,9 @@ body {
   margin: 0;
 }
 
-.razorpay-button {
+.default-razorpay-button {
+  font-family: inherit;
+  font-size: inherit;
   border: none;
   background: #4099ff;
   color: #fff;
@@ -17,3 +19,9 @@ body {
   height: 48px;
   width: 300px;
 }
+
+.default-razorpay-button:focus,
+.default-razorpay-button:active{
+ background: #4099ee;
+}
+
