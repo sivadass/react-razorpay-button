@@ -51,7 +51,7 @@ class RazorpayButton extends React.Component {
           style={{ width: "100%", background: "#f5f5f5", borderRadius: "4px" }}
           onClick={this.handleClick}
         >
-          Checkout with Razorpay
+          <img src="logo.png" /> Checkout with Razorpay
         </button>
       </div>
     );
