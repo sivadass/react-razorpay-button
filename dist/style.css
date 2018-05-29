@@ -9,7 +9,9 @@ body {
   margin: 0;
 }
 
-._2hYs3-iAhJMMkAZzA7etd0 {
+.xmDH-i63DWz3nBORdtL-J {
+  font-family: inherit;
+  font-size: inherit;
   border: none;
   background: #4099ff;
   color: #fff;
@@ -17,3 +19,9 @@ body {
   height: 48px;
   width: 300px;
 }
+
+.xmDH-i63DWz3nBORdtL-J:focus,
+.xmDH-i63DWz3nBORdtL-J:active{
+ background: #4099ee;
+}
+
